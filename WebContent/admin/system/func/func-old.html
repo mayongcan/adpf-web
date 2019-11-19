@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-权限管理</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/jsTree/default/style.min.css" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+    <style type="text/css">
+    .jstree-open>.jstree-anchor>.fa-folder:before{content:"\f07c"}.jstree-default .jstree-icon.none{width:0}
+    </style>
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+		<div class="btn-group hidden-xs div-tool-bar" id="treeToolbar" role="group"></div>
+		<div class="div-box-tree" style="border-width: 5px 0px;margin-right:510px;margin-top:5px;">
+			<div id="treeView" style="overflow: auto;padding-bottom: 25px;"></div>
+		</div>
+		<div id="divInfo" class="div-box-tree" style="border-width: 5px 0px;width:500px;position:absolute;top:0;right:-5px;margin: 90px 20px 0px 20px;">
+			<table class="reference">
+				<tbody><tr><th style="width:85px;">名称</th><th>内容</th></tr>
+				<tr><td>权限名称</td><td id="tdFuncName"></td></tr>
+				<tr><td>权限父节点</td><td id="tdParentFuncId"></td></tr>
+				<tr><td>权限类型</td><td id="tdFuncType"></td></tr>
+				<tr><td>权限图标</td><td id="tdFuncIcon"></td></tr>
+				<tr><td>权限链接</td><td id="tdFuncLink"></td></tr>
+				<tr><td>权限标识</td><td id="tdFuncFlag"></td></tr>
+				<tr><td>显示位置</td><td id="tdDispPosition"></td></tr>
+				<tr><td>显示次序</td><td id="tdDispOrder"></td></tr>
+				<tr><td>基础模块</td><td id="tdIsBase"></td></tr>
+				<tr><td>是否显示</td><td id="tdIsShow"></td></tr>
+				<tr><td>新页面打开</td><td id="tdIsBlank"></td></tr>
+				<tr><td>权限备注</td><td id="tdFuncDesc"></td></tr>
+				</tbody>
+			</table>
+		</div>
+    </div>
+    
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <script src="../../../js/plugins/jsTree/jstree.min.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="js/func.js" type="text/javascript"></script>
+</body>
+</html>

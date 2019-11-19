@@ -1,0 +1,115 @@
+.Clearing{
+	float: left;
+	margin-right:20px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000b5;
+	cursor:pointer;
+}
+.dutyDiv{
+	float: left;
+	margin-right:20px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000b5;
+	cursor:pointer;
+}
+.dutyDivAll{
+	float: left;
+	width: 100%;
+	margin-left:20px;
+	margin-top:8px;
+	margin-bottom: 8px;	
+}
+.ClearingAll{
+	float: left;
+	width: 100%;
+	margin-left:6px;
+	margin-bottom: 12px;	
+}
+
+.col-sm-2{
+	min-width: 156px;
+}
+.widelable{
+	width: 200px;
+}
+.widelable1{
+	width: 160px;
+}
+.widelable2{
+	width: 200px;
+}
+.widelable3{
+	width: 212px;
+}
+.buttonDiv{
+	float:left;
+	margin-left:48px;
+	width: 288px;
+	height: 50px;
+}
+.inputValue{
+	float:left;
+	width: 100px;
+	height: 34px;
+	background: #1ab394;
+	border-radius: 5px;
+}
+.button{
+	float:left;
+    width: 100px;
+    height: 34px;
+
+    }
+em{
+	float:left;
+	margin-top:10px;
+	margin-left: 33px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+    }
+.divA{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left: 20px;
+    float: left;
+    }
+ #membershipReturn,#administrationDutyReturn,#rewardReturn,#abroadReturn,#DifficultReturn,#FamilyReturn,#OrganizationalReturn,#DuesReturn,#positionReturn,#representReturn{
+ 	background: #1ab394;
+ }
+ .presentDiv{
+ 	color:red;
+ 	text-decoration: underline;
+ 	font-size: 16px;
+	font-weight: bold;
+ }
+.aDiv{
+	float: left;
+}
+.wrapper-content{
+	height: 0px;
+}
+.communication{
+	width: 384px;
+	float: left;
+    height: 30px;
+    line-height: 35px;
+    font-size: 14px;
+    margin-left: 12px;
+}
+ .imageDiv{
+	 float:right;
+	margin-right:100px;
+	height: 138px;
+	width: 138px;
+} 
+.communication1{
+	float: left;	
+	margin-top: -100px;
+}
+.communication2{
+	float: left;	
+	margin-top: -56px;
+}

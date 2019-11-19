@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-字典管理-编辑</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+	<style type="text/css">
+	.edit-layer-title{
+	    width:120px;
+    }
+	.edit-layer-input{
+		float: left;
+		width: 515px;
+    }
+	</style>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+    	<form id="divEditForm" role="form" onsubmit="return false;" autocomplete=off>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">字典类型名称</label>
+                <input type="text" id="name" name="name" placeholder="请输入字典显示的名称" class="form-control m-b edit-layer-input">
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">字典类型值</label>
+                <input type="text" id="value" name="value" placeholder="请输入需要获取字典时的固定值" class="form-control m-b edit-layer-input">
+         	</div>
+            <div id="divShareType" class="form-group edit-group-style" style="display:none">
+                <label class="col-sm-2 control-label edit-layer-title">共享类型</label>
+         		<select class="m-b selectpicker edit-layer-input" id="shareType"></select>
+            </div>
+            <div id="divTenantsId" class="form-group edit-group-style" style="display:none">
+                <label class="col-sm-2 control-label edit-layer-title">所属租户</label>
+         		<select class="m-b selectpicker edit-layer-input" id="tenantsId"></select>
+            </div>
+       		<div class="edit-box-button">
+		        <button type="submit" class="btn btn-primary edit-layer-button" id="layerOk">保 存</button>
+		        <button type="reset" class="btn btn-white edit-layer-button" id="layerCancel">取 消</button>
+	        </div>
+        </form>
+    </div>
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/localization/messages_zh.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/layui/layer/layer.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="js/dict-edit.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-页面字段-编辑</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+    	<form id="divEditForm" role="form" onsubmit="return false;" autocomplete=off>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">字段名称</label>
+                <input type="text" id="columnName" name="columnName" class="form-control m-b edit-layer-input" disabled="disabled">
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">是否查询</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isSearch">
+         			<option value='N'>否</option>
+				  	<option value='Y'>是</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">查询类型</label>
+         		<select class="m-b selectpicker edit-layer-input" id="searchType">
+				  	<option value='0'>无</option>
+				  	<option value='1'>普通查询</option>
+         			<option value='2'>模糊查询</option>
+         			<option value='3'>日期查询</option>
+         			<option value='4'>下拉框</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style" id="searchDictDiv">
+            	<label class="col-sm-2 control-label edit-layer-title">字典值</label>
+                <input type="text" id="searchDict" name="searchDict" placeholder="请输入查询下拉框字典值" class="form-control m-b edit-layer-input">
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">是否显示</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isDisplay">
+				  	<option value='Y'>是</option>
+         			<option value='N'>否</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">显示名称</label>
+                <input type="text" id="displayName" name="displayName" class="form-control m-b edit-layer-input">
+         	</div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">是否编辑</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isEdit">
+				  	<option value='Y'>是</option>
+         			<option value='N'>否</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">编辑框</label>
+         		<select class="m-b selectpicker edit-layer-input" id="editType">
+				  	<option value='0'>无</option>
+				  	<option value='1'>文本框</option>
+         			<option value='2'>密码</option>
+				  	<option value='3'>日期(yyyy-MM-dd)</option>
+				  	<option value='4'>日期(yyyy-MM-dd HH:mm:ss)</option>
+				  	<option value='5'>上传文件</option>
+				  	<option value='6'>上传图片</option>
+				  	<option value='7'>下拉框</option>
+				  	<option value='8'>富文本编辑器</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style" id="editDictDiv">
+            	<label class="col-sm-2 control-label edit-layer-title">字典值</label>
+                <input type="text" id="editDict" name="editDict" placeholder="请输入编辑下拉框字典值" class="form-control m-b edit-layer-input" >
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">是否校验</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isVaildata">
+				  	<option value='Y'>是</option>
+         			<option value='N'>否</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">校验规则</label>
+         		<select class="m-b selectpicker edit-layer-input" id="vaildataRule">
+				  	<option value='0'>无</option>
+				  	<option value='1'>非空</option>
+         			<option value='2'>数字</option>
+				  	<option value='3'>字母</option>
+				  	<option value='4'>邮政编码</option>
+				  	<option value='5'>手机号码</option>
+				  	<option value='6'>电话号码</option>
+				  	<option value='7'>电子邮箱</option>
+				  	<option value='8'>身份证</option>
+				  	<option value='9'>网址</option>
+				  	<option value='10'>日期</option>
+         		</select>
+            </div>
+       		<div class="edit-box-button">
+		        <button type="submit" class="btn btn-primary edit-layer-button" id="layerOk">确 定</button>
+		        <button type="reset" class="btn btn-white edit-layer-button" id="layerCancel">取 消</button>
+	        </div>
+        </form>
+    </div>
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/localization/messages_zh.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/layui/layer/layer.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="js/gencode-page-edit.js" type="text/javascript"></script>
+</body>
+</html>

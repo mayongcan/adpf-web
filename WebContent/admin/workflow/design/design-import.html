@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-流程设计-导入</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+    	<form id="divEditForm" role="form" onsubmit="return false;" autocomplete=off>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">流程名称</label>
+                <input type="text" id="name" name="name" placeholder="请输入流程名称" class="form-control m-b edit-layer-input" style="width:550px;">
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">流程KEY</label>
+                <input type="text" id="key" name="key" placeholder="请输入流程KEY" class="form-control m-b edit-layer-input" style="width:550px;">
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">流程类型</label>
+         		<select class="m-b selectpicker edit-layer-input" id="category"></select>
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">流程描述</label>
+                <input type="text" id="desc" name="desc" placeholder="请输入流程描述" class="form-control m-b edit-layer-input" style="width:550px;">
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">流程文件</label>
+                <div style="width:635px"><input type="file" id="bpmnFile" name="bpmnFile"></div>
+            </div>
+       		<div class="edit-box-button">
+		        <button type="submit" class="btn btn-primary edit-layer-button" id="layerOk">保 存</button>
+		        <button type="reset" class="btn btn-white edit-layer-button" id="layerCancel">取 消</button>
+	        </div>
+        </form>
+    </div>
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+	<script src="../../../js/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/localization/messages_zh.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/prettyfile/bootstrap-prettyfile.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/layui/layer/layer.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="js/design-import.js" type="text/javascript"></script>
+</body>
+</html>

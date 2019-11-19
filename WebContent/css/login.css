@@ -1,0 +1,229 @@
+@charset "utf-8";
+body,h1,p,dl,dd{margin: 0}
+h1,h2,h3,h4,h5{margin:0;font-size:16px;font-weight:normal;}
+ul{margin: 0;padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;outline:none;}
+input{margin:0;padding:0;border:none;background-color:transparent;outline:none;}
+img{border:none;}
+.clearfix{clear: both;}
+*{font-family: "微软雅黑",arial}
+body{
+	overflow: hidden;
+	background:url(../img/login/login_bg.jpg) no-repeat center center #fff;
+	/* background-color: #f3f3f4; */
+}
+input::-webkit-input-placeholder {
+    color: #b2b9bd;
+}
+input:-ms-input-placeholder { // IE10+
+    color: #b2b9bd;
+}
+input:-moz-placeholder { // Firefox4-18
+    color: #b2b9bd;
+}
+input::-moz-placeholder { // Firefox19+
+    color: #b2b9bd;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #f8f9fb inset;
+  -webkit-text-fill-color: #999999;
+}
+.login-containter{
+	width: 1100px;
+	margin: 178px auto 0 auto;
+}
+
+.login-left{
+	float: left;
+	position: relative;
+}
+.login-left span{
+	display:block;
+	margin: 0 0 70px 0px;
+	position: relative;
+	top: -40px;
+	width:440px;
+}
+.login-left span img{
+	width:440px;
+	margin:0 auto;
+}
+#login-left-title{
+	color: #555555;
+	text-align:center;
+	font-size:35px;
+	line-height: 30px;
+	top: -15px;
+}
+.login-left>img{
+	float: left;
+	transition:all 1s
+}
+.icon00{
+	margin-left:70px;
+	margin-top: 110px;
+}
+.icon01{
+	position: absolute;
+	top: 70px;
+	left: -20px;
+}
+.icon02{
+	position: absolute;
+	top: 70px;
+	right: -20px;
+}
+.icon03{
+	position: absolute;
+	top: 230px;
+	left: -124px;
+}
+.icon04{
+	position: absolute;
+	top: 230px;
+	right: -124px;
+}
+.icon05{
+	position: absolute;
+	top: 452px;
+	left: -20px
+}
+.icon06{
+	position: absolute;
+	top: 452px;
+	right: -20px
+}
+
+
+.login{
+	float: right;
+	width: 310px;
+	padding: 50px 35px 12px 35px;
+	border-radius: 6px;
+	background-color: rgb(248, 249, 251);
+	box-shadow: 0px 14px 40px 0px rgba(112, 117, 120, 0.26);
+}
+.login>div{
+	width: 100%;
+}
+
+.login>div img{
+	float: left;
+	
+}
+.login>div p{
+	text-align: center;
+	margin: 9px 0 0 12px;
+	font-size: 20px;
+	color: #808080;
+	line-height: 26px;
+}
+
+.login dl{
+	width: 100%;
+	margin: 41px 0 0 0;
+}
+
+.login dd{
+	width: 100%;
+	border-bottom: 1px solid #cdcdcd;
+	padding-bottom: 5px;
+}
+
+.login dl img{
+	float: left;
+	
+} 
+
+.login dl input{
+	width: 269px;
+	font-size: 17px;
+	color: #999;
+	margin: 2px 0 0 10px;
+}
+
+.login .btn-action input{
+	width: 134px;
+	height: 45px;
+	font-size: 20px;
+	color: #fff;
+	margin: 18px 0 0 0;
+	cursor: pointer;
+	box-shadow: 0px 3px 9px 0px rgba(112, 117, 120, 0.26);	
+}
+
+select{
+	height: 27PX;
+	cursor: pointer;
+	margin-left: 2px;
+	background-color:transparent;
+	position: relative;
+	z-index: 1;
+	top: -20px;
+	background: transparent;
+	outline: none;
+	left: 20px;
+}
+
+.login-button{
+	float: left;
+	background: #1bb394;
+	border-radius: 12px;
+}
+
+.login-reset{
+	float: right;
+	background: #f33535;
+	border-radius: 12px;
+}
+
+.phone-verify{
+	float: right;
+    font-size: 13px;
+    color: white;
+    width: 90px;
+    height: 35px;
+    border-radius: 3px;
+    background: #bbbbbb;
+}
+
+.login .info{
+	font-size: 12px;
+	color:#9f9fa0;
+	text-align: center;
+	line-height: 20px;
+	margin-top: 40px
+}
+
+.login .info a{
+	font-size: 12px;
+	color: #62a8ea;
+}
+
+.login .forget{
+	margin-bottom: 10px;
+}
+
+.login .forget input{
+	float: left;
+	width: 16px;
+	height: 16px;
+	border-radius: 2px;
+	margin: 0 8px 0 8px ;
+}
+
+.login .forget h1{
+	color: #999;
+	float: left;
+	cursor: pointer;
+	line-height: 16px;
+	font-size: 12px;
+}
+
+.login .forget h2{
+	color:#62a8ea;
+	cursor: pointer;
+	font-size: 12px;
+	float: right;
+}

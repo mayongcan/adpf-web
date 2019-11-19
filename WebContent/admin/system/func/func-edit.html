@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-权限管理-编辑</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/jsTree/default/style.min.css" rel="stylesheet">
+    <link href="../../../css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+	<style type="text/css">
+	.edit-layer-title{
+	    width:105px;
+    }
+	.edit-layer-input{
+		float: left;
+		width: 205px;
+    }
+	</style>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+    	<form id="divEditForm" role="form" onsubmit="return false;" autocomplete=off>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">权限名称</label>
+                <input type="text" id="funcName" name="funcName" placeholder="请输入权限名称" class="form-control m-b edit-layer-input">
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">权限父节点</label>
+		   		<div id="parentFunc" style="float:left"></div>                
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">权限类型</label>
+         		<select class="m-b selectpicker edit-layer-input" id="funcType">
+         			<option value="100200">文件夹</option>  
+					<option value="100300">菜单</option>  
+					<option value="100400">权限</option>   
+         		</select>
+         	</div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">显示次序</label>
+                <input type="text" id="dispOrder" name="dispOrder" placeholder="请输入权限的显示顺序" class="form-control m-b edit-layer-input">
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">权限链接</label>
+         		<input type="text" id="funcLink" name="funcLink" placeholder="示例：#" class="form-control m-b edit-layer-input" style="width: 530px;">
+            </div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">权限标识</label>
+                <input type="text" id="funcFlag" name="funcFlag" placeholder="示例：systemManager" class="form-control m-b edit-layer-input" style="width: 530px;">
+            </div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">权限图标</label>
+                <input type="text" id="funcIcon" name="funcIcon" placeholder="权限图标" class="form-control m-b edit-layer-input">
+            </div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">菜单位置</label>
+         		<select class="m-b selectpicker edit-layer-input" id="dispPosition">
+					<option value="1">列表上方</option>
+         			<option value="2">列表右侧</option>  
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">基础模块</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isBase">
+					<option value="N">否</option>
+         			<option value="Y">是</option>  
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">是否显示</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isShow">
+         			<option value="Y">是</option>  
+					<option value="N">否</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            		<label class="col-sm-2 control-label edit-layer-title">新页面打开</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isBlank">
+					<option value="N">否</option>
+         			<option value="Y">是</option>  
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">权限备注</label>
+         		<input type="text" id="funcDesc" name="funcDesc" placeholder="请输入当前权限的说明或作用" class="form-control m-b edit-layer-input">
+            </div>
+       		<div class="edit-box-button">
+		        <button type="submit" class="btn btn-primary edit-layer-button" id="layerOk">保 存</button>
+		        <button type="reset" class="btn btn-white edit-layer-button" id="layerCancel">取 消</button>
+	        </div>
+        </form>
+    </div>
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <script src="../../../js/plugins/jsTree/jstree.min.js" type="text/javascript"></script>
+	<script src="../../../js/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/localization/messages_zh.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/layui/layer/layer.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="../../../js/platform/combobox-tree.js" type="text/javascript"></script>
+    <script src="js/func-edit.js" type="text/javascript"></script>
+</body>
+</html>

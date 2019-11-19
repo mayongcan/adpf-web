@@ -1,0 +1,149 @@
+.wrapper {
+    padding: 0 20px;
+}
+.wrapper-content {
+    padding: 15px 15px;
+}
+.gray-bg {
+    background-color: #f3f3f4;
+}
+ .edit-box-button{	
+    margin-left:60%;
+	margin-right: 20px;
+    margin-bottom: 20px;
+}
+.edit-layer-title{
+	float:left;
+	width:98%;
+    height: 40px;
+    line-height: 35px;
+    font-size: 15px;
+    min-width: 86px;
+    color: #555;
+    
+} 
+.edit-group-style{
+	float:left;
+	width: 96%;
+	border-top:1px;
+	border-bottom:1px;
+	border-color: #1ab394;
+}
+.has-success .control-label {
+    color: #1ab394;
+}
+
+.has-warning .control-label {
+    color: #f8ac59;
+}
+
+.has-error .control-label {
+    color: #ed5565;
+}
+.edit-layer-input{
+	float:left;
+	margin-left:20px;
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom-color: #1ab394;
+	
+}
+.btn-primary {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFFFFF;
+}
+.edit-layer-button{
+	float:left;
+	width:56px;
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left:10px;
+}
+.btn-white {
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+.open .dropdown-toggle.btn-white {
+    color: inherit;
+    border: 1px solid #d2d2d2;
+}
+.open .dropdown-toggle.btn-white {
+    background-image: none;
+}
+.scope-style{
+	float: left;
+	margin-left: 38px;
+	margin-bottom: 10px;
+}
+
+.scope-input{
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom-color: #d2d2d2;
+}
+.span_style{
+	float: left;
+	width: 98%;
+    font-weight: 700;
+    color: #404246;
+    font-size: 16px;
+}
+.item{
+	 float: left;
+	 margin-left: 14px;
+	/* border: 1px solid #888; */
+	}
+.m-checkbox{
+	margin-left: 12px;
+	}
+.taginput{
+	float:left;
+	width:98%;
+	height:35px;
+	margin-left:20px;
+	margin-top:-18px;
+	margin-bottom:20px;
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom-color: #1ab394;
+}
+.m-checkbox1{
+	float: left;
+	width: 90%;
+	height: 38px;		
+}
+.item1{
+	width:88%;
+	height:200px;
+	overflow-y:scroll;
+}
+.game{
+	float: left;
+	width: 98%;
+}
+.em{
+	font-size: 15px;
+    color: #555;
+    font-weight: bold;
+    
+}
+.game div{
+	margin-bottom: 8px;
+	}
+.time{
+	float:left;
+	margin-left: 48px;
+	width: 88%;
+	height: 38px;
+}
+.fafa{
+	margin-left: -10px;
+}
+.gaga{
+	margin-left: 50%;
+}

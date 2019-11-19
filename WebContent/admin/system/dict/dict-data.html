@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-字典管理-配置字典数据</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+    	<div class="ibox-title" id="titleInfo">
+           <h5>字典数据列表 <small id="showInfoMsg">-- 显示当前所选组织架构的所有用户</small></h5>
+       	</div>
+		<div class="ibox-content" style="border-width: 1px 0px;padding-top: 0px;">
+    		<div class="btn-group hidden-xs" id="tableToolbar" role="group"></div>
+            <table id="tableList" 
+				data-toolbar="#tableToolbar"
+				data-show-toggle="false"
+				data-show-columns="true"
+				data-striped="true"
+				data-cache="false"
+				data-sortable="false"
+				data-sort-order="asc"
+				data-page-number="1"
+				data-page-size="50"
+				data-click-to-select="true"
+				data-icon-size="outline"
+				data-pagination="true"
+				data-side-pagination="server"	
+				data-page-list="[50, 100, ALL]"
+				data-mobile-responsive="true"
+				data-use-row-attr-func="true" 
+				data-reorderable-rows="true">
+                <thead>
+                    <tr>
+                        <th data-field="tableMulti" data-formatter="appTable.tableFormatCheckbox" data-checkbox="true" data-visible="false"></th>
+                        <th data-field="name">字典数据名称</th>
+                        <th data-field="value">字典数据值</th>
+                        <th data-field="dictDesc">字典数据说明</th>
+                        <!-- <th data-field="dataShare" data-formatter="formatDataShare">数据共享</th> -->
+                        <th data-field="dispOrder">显示次序</th>
+						<th data-field="operate" data-formatter="formatOperate" data-width="250px">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-table/bootstrap-table.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-table/tableExport.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/tableDnD/jquery.tablednd.1.0.3.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="../../../js/platform/table-utils.js" type="text/javascript"></script>
+    <script src="js/dict-data.js" type="text/javascript"></script>
+</body>
+</html>

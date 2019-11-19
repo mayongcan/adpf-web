@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无线电行政执法系统 - 登录</title>
+    <meta name="keywords" content="无线电行政执法系统 - 登录">
+    <meta name="description" content="无线电行政执法系统 - 登录">
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="css/plugins/sweetalert/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="css/plugins/toastr/toastr.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <script src="js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="js/plugins/sweetalert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="js/plugins/toastr/toastr.min.js" type="text/javascript"></script>
+    <script src="js/plugins/loadingoverlay/loadingoverlay.js" type="text/javascript"></script>
+    <script src="js/timer.jquery.min.js" type="text/javascript"></script>
+    <script src="js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="js/platform/appconfig.js" type="text/javascript"></script>
+    <script src="js/platform/Browser.js" type="text/javascript"></script>
+    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+</head>
+<body>
+	<div class="login-containter">
+		<div class="login-left">
+			<span id="login-left-title">
+				无线电行政执法系统
+			</span>
+			<img src="img/login/login_icon00.png" class="icon00">
+			<img src="img/login/login_icon01.png" class="icon01">
+			<img src="img/login/login_icon02.png" class="icon02">
+			<img src="img/login/login_icon03.png" class="icon03">
+			<img src="img/login/login_icon04.png" class="icon04">
+			<img src="img/login/login_icon05.png" class="icon05">
+			<img src="img/login/login_icon06.png" class="icon06">
+		</div>
+		<div class="login">
+			<div>
+				<p>用户登录</p>
+				<div class="clearfix"></div>
+			</div>
+			<dl>
+				<dd>
+					<img src="img/icon_user.png" alt="" style="width:25px;height:25px">
+					<input type="text" name="username" id="username" value=""  placeholder="请输入登录账号">
+					<div class="clearfix"></div>
+				</dd>
+				<dd style="margin: 34px 0 10px 0">
+					<img src="img/icon_password.png" alt="" style="width:25px;height:25px">
+					<input type="password" name="password" id="password" value="" placeholder="请输入登录密码">
+					<div class="clearfix"></div>
+				</dd>
+				<dd style="margin: 34px 0 10px 0;padding-bottom: 2px;">
+					<img src="img/icon_code.png" alt="" style="width:25px;height:25px;margin-top: 6px;">
+					<input type="text" name="validCode" id="validCode" value=""  placeholder="请输入验证码" style="width: 145px;margin-top: 10px;" onkeypress="EnterPress(event)" onkeydown="EnterPress()" >
+					<img id="changeKaptcha" style="cursor: pointer;height: 34px;float:right">
+					<div class="clearfix"></div>
+				</dd>
+			</dl>
+			<div class="forget">
+				<input type="checkbox" id="rememberMe">
+				<h1 onclick="javascrpit:$('#rememberMe').prop('checked', !$('#rememberMe').prop('checked'))">记住密码</h1>
+				<h2 id="forgetPassword">忘记密码?</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="btn-action">
+				<input type="button" value="登   录" class="login-button" onclick="loginAction()">
+				<input type="button" value="重   置" class="login-reset" onclick="resetAction()">
+				<div class="clearfix"></div>
+			</div>
+			<div class="info">
+				<div>无线电行政执法系统</div>
+				<div>Copyright &copy; 2016-2018 <a href="http://www.gimplatform.com" style="display:none">gimplatform.com</a></div>
+			</div>
+		</div>
+		<div class="clearfix"><label id="onTime" style="display:none"></label></div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//启动时获取图片验证码
+	        refreshCode();
+	    		//刷新验证码
+	        $("#changeKaptcha").click(function(){
+        		refreshCode();
+        		$("#validCode").val("");
+	        })
+	        var loadTime = 0;
+	        //验证码加载失败时重新加载
+	        $('#changeKaptcha').error(function () {
+        		loadTime++;
+        		setTimeout("refreshCode()", 200);
+        		if(loadTime > 10) $("#changeKaptcha").unbind("error");
+	        });
+	        //忘记密码
+	        $('#forgetPassword').click(function(){
+        		window.location.href = app.info.rootPath + "/forget-password.html";
+	        })
+	        //记住密码
+	        if($.cookies.get("rememberMe") == "1"){
+        		$("#rememberMe").prop('checked', true);  
+	            $("#username").val($.cookies.get("username"));  
+	            $("#password").val($.cookies.get("password"));  
+	        }
+	        //每5分钟刷新一次code
+	        $('#onTime').timer({
+			    duration: '5m',
+			    callback: function() {
+			    	refreshCode();
+			    },
+			    repeat: true //重复调用
+			});
+		});
+		//刷新验证码
+	    function refreshCode(){
+    		$("#changeKaptcha").attr("src", app.conf.url.getVerifyCode + "?tm=" + new Date().getTime());
+	    }
+		$(window).resize(marginTop);
+		function marginTop(){
+			var window_h = $(window).height(),
+				window_w = $(window).width(),
+				content_h = $(".login-containter").height(),
+				content_margin = (window_h-content_h)/2-30;
+			
+			$("body").height(window_h)
+			$(".login-containter").css("marginTop",content_margin);
+			
+			if(window_w < 1200){
+				$("body").removeClass("minWidth");
+			}else{
+				$("body").addClass("minWidth");
+			}
+		}
+		marginTop();
+		$(".login p input").mouseenter(function(){
+			$(this).stop(true,true).animate({top:-1},100);
+		}).mouseleave(function(){
+			$(this).stop(true,true).animate({top:0},100);
+		});
+
+	    //验证输入的验证码 
+	    function loginAction(){
+	    	//判断用户名，密码，验证码都不为空的时候，调用ajax验证验证码，成功后才进行登录
+	    	var username = $.trim($("#username").val());
+	    	var password = $("#password").val();
+	    	var kaptchaCode = $("#validCode").val();
+	    	if(username == ""){app.message.alert("登录账号不能为空！");return;}
+	    	if(password == ""){app.message.alert("登录密码不能为空！");return;}
+	    	if(kaptchaCode == ""){app.message.alert("验证码不能为空！");return;}
+	    	if(username == "" || password == "" || kaptchaCode == "") return;
+	        $.ajax({
+	            url: app.conf.url.checkVerifyCode,
+	            type:'GET',
+	            async : false,
+			    dataType: "json",
+	            data:{"kaptchaCode" : kaptchaCode},
+	            success:function(data){
+	            	if(data.code != undefined && data.code == 'success'){
+	            		//进行登录并获取token
+	            		app.getToken(username, password, function(){
+	            			app.checkLoginIp(username, function(){
+	            				//登录成功后，判断是否需要记住密码
+	            				if($('#rememberMe').prop('checked')){
+	            					$.cookies.set("username", username);
+	            					$.cookies.set("password", password);
+	            					$.cookies.set("rememberMe", "1");
+	            				}else{
+	            					$.cookies.del("username", username);
+	            					$.cookies.del("password", password);
+	            					$.cookies.del("rememberMe", "1");
+	            				}
+	            				//将当前登录的url写入cookies
+	            				$.cookies.set("loginUrl", window.location.href);
+	            				window.location.href = app.info.rootPath + "/admin/index.html";
+	            			},function(error){
+	            				app.message.error("登录失败：" + error);
+	            			})
+	            		},function(error){
+	                		//提示错误内容
+	                		app.message.error("登录失败：" + error);
+	            		});
+	            	}else{
+	            		//提示错误内容
+	            		app.message.error("验证码输入错误，请重新输入！");
+	            	}
+	            },error:function(){
+	        		//提示错误内容
+	        		app.message.error("登录失败，请联系管理员！");
+	    	   	}
+	        });
+	    }
+		//重置输入框
+		function resetAction(){
+			$("#username").val('');
+	  		$("#password").val('');
+	  		$("#validCode").val('');
+		}
+	    //回车事件
+	    function EnterPress(event){ //传入 event   
+	        var event = event || window.event;   
+	        if(event.keyCode == 13){   
+        		setTimeout(function () {loginAction();}, 50);
+	        	event.preventDefault();
+	        	event.preventDefault();
+	        }
+	    }
+	</script>		
+</body>
+</html>

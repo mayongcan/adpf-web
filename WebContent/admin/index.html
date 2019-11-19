@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备 viewport -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+	<meta name="author" content="gimplatform.com">
+	<!-- 360浏览器默认使用Webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止百度SiteAPP转码 -->
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <!-- bootstrap核心样式 -->
+    <link href="../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <!-- 图标样式 -->
+    <link href="../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../fonts/web-icons/web-icons.css" rel="stylesheet">
+    <link href="../fonts/iconfont/iconfont.css" rel="stylesheet">
+    <!-- 插件样式 -->
+    <link href="../css/plugins/pace/themes/pace-theme-minimal.css" rel="stylesheet">
+    <link href="../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="../css/platform.css" rel="stylesheet">
+    <!-- jquery bootstrap -->
+    <script src="../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <!-- 插件脚本 -->
+    <script src="../js/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="../js/plugins/sweetalert/sweetalert.min.js" type="text/javascript"></script>
+    <script src="../js/plugins/toastr/toastr.min.js" type="text/javascript"></script>
+    <script src="../js/plugins/metisMenu/jquery.metisMenu.js" type="text/javascript"></script>
+    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="../js/plugins/layui/layer/layer.js" type="text/javascript"></script>
+    <script src="../js/plugins/loadingoverlay/loadingoverlay.js" type="text/javascript"></script>
+    <script src="../js/timer.jquery.min.js" type="text/javascript"></script>
+    <!-- 平台核心脚本 -->
+    <script src="../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="../js/platform/appconfig.js" type="text/javascript"></script>
+    <script src="../js/platform/index.js" type="text/javascript"></script>
+    <style type="text/css">
+    .navbar-right > li.active {
+	    border-left: 0px solid #19aa8d;
+	    background: #f3f3f4;
+	}
+    .nav.navbar-right > li > a {
+	    color: #1AB394;
+	}
+	.nav-tabs > li > a {
+	    line-height: 40px;
+	    font-size:15px;
+	    padding-left:15px;
+	    padding-right:10px;
+	    border: none;
+	    color:#555555;
+	}
+	.nav-tabs {
+	    border-bottom: 0px
+	}
+	.nav > li > a i {
+	    margin-right: 3px;
+	    width: 18px;
+	}
+	.nav-tabs > li.active > a,
+	.nav-tabs > li.active > a:hover,
+	.nav-tabs > li.active > a:focus {
+	    border-width: 0px;
+	    color:#4397e6;
+	}
+	.btn-primary {
+	    background-color: #62a8ea;
+	    border-color: #62a8ea;
+	}
+	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary{
+	    background-color: #62a8ea;
+	    border-color: #62a8ea;
+	}
+    </style>
+    
+    <script type="text/javascript">
+	//token过期则跳转到登录页面
+	if(!app.isLogin()) window.location.href = top.app.info.tenantsInfo.extendData.loginPage;
+    </script>
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden;min-width:1120px;">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close">
+            	<i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav">
+                	<li style='height:60px;padding-left: 25px;line-height: 60px;' >
+	                	<span id="spanNavLabel" class='nav-label' style='color: #f3f3f4;font-size:18px;'>通用信息管理平台</span>
+                     	<span class='fa'></span>
+	                </li>
+                </ul>
+                <ul class="nav side-menu animated fadeIn" id="side-menu">
+                
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+        		<!--顶部栏开始-->
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header" style="height: 60px;width:65%">
+	                    	<a class="navbar-minimalize minimalize-btn btn btn-primary " href="#">
+	                    		<i class="fa fa-bars"></i> 
+	                    	</a>
+	                    <!-- <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+	                        <div class="form-group">
+	                            <input type="text" placeholder="欢迎使用通用信息管理平台" class="form-control" name="top-search" id="top-search">
+	                        </div>
+	                    </form> -->
+                        <!-- 顶部菜单 -->
+	                    <ul class="nav navbar-toolbar nav-tabs" id="index-top-menu"></ul>
+	                </div>
+                    <!-- <ul class="nav navbar-top-links navbar-right" style="height: 60px;text-align:right;width:33%;"> -->
+                    <ul class="nav navbar-top-links navbar-right" style="height: 60px;text-align:right;">
+                       <!-- <li class="dropdown" style="width:300px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"> -->
+                       <li id="dropdownMenu" class="dropdown">
+	                    	<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#"  style="max-width:310px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                <span>
+                                	<strong class="font-bold">
+                                		<span id="spanUserName">用户</span>
+                                	</strong>
+                                </span>
+                                <span >(<span id="spanUserRole">角色</span>) <b class="caret"></b></span>
+	                        </a>
+	                        <ul class="dropdown-menu dropdown-alerts">
+	                            <li><a class="index-menu-item" href="/admin/system/person/info.html">个人信息</a></li>
+	                            <li><a class="index-menu-item" href="/admin/system/person/info.html">修改密码</a></li>
+	                            <!-- <li><a class="index-menu-item" href="mailbox.html">我的邮箱</a></li> -->
+	                            <li class="divider"></li>
+	                            <li><a href="javascript:index.logout();">安全退出</a></li>
+	                        </ul>
+	                    </li>
+	                    <li class="dropdown hidden-xs" style="display:none">
+	                        <a id="titleMyTask" href="#" data-tabname="我的任务">
+	                            <i class="fa fa-bell" style="color:#EE6B6B"></i>待办 ( <span id="taskCount">0</span> ) 
+	                        </a>
+	                    </li>
+	                    <li class="dropdown hidden-xs" style="margin-right: 18px;width:75px;float: right;">
+	                        <a href="javascript:index.logout();">
+	                            <i class="fa fa fa-sign-out"></i>退出
+	                        </a>
+	                    </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--顶部栏结束-->
+            
+            <!--tab标签栏开始-->
+            <div class="row content-tabs">
+                <button class="roll-nav roll-left index-tab-left"><i class="fa fa-backward"></i></button>
+                <nav class="page-tabs index-tab-menu">
+                    <div class="page-tabs-content">
+                    		<!-- 这里决定是否需要添加首页标签 -->
+                        <!-- <a href="javascript:;" class="active index-tab-menu-item" data-id="home-page.html">首页</a> -->
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right index-tab-right"><i class="fa fa-forward"></i>
+                </button>
+                <div class="btn-group roll-nav roll-right">
+                    <button class="dropdown index-tab-close" data-toggle="dropdown">关闭操作<span class="caret"></span></button>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                        <!-- <li class="index-tab-show-active"><a>关闭当前选项卡</a></li>
+                        <li class="divider"></li> -->
+                        <li class="index-tab-close-all"><a>关闭全部选项卡</a></li>
+                        <li class="index-tab-close-other"><a>关闭其他选项卡</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--tab标签栏结束-->
+            
+            <!--中间iframe开始-->
+            <div class="row index-main-content" id="content-main">
+                <!-- <iframe class="index-iframe" name="iframe0" width="100%" height="100%" frameborder="0" src="home-page.html" data-id="home-page.html" seamless></iframe> -->
+                <iframe class="index-iframe" name="iframe0" width="100%" height="100%" frameborder="0" seamless></iframe>
+            </div>
+            <!--中间iframe结束-->
+            
+            <!--底部信息栏开始-->
+            <div class="footer">
+            	<div class="pull-left">
+            		账号:<label id="lbUserCode" style="font-weight: normal;margin-right: 10px;"></label> 
+            		名称:<label id="lbUserName" style="font-weight: normal;margin-right: 10px;"></label> 
+            		组织:<label id="lbUserOrganizer" style="font-weight: normal;margin-right: 10px;"></label>
+            		角色:<label id="lbUserRole" style="font-weight: normal;margin-right: 10px;"></label> 
+            		<!-- 职能:<label id="lbUserDataPermission" style="font-weight: normal;margin-right: 10px;"></label> -->
+            	</div>
+                <!-- <div class="pull-right">Copyright &copy; 2016-2018 <span id="spanCopyright" >通用信息管理平台</span> <label id="onTime" style="display:none"></label></div> -->
+                <div class="pull-right"><span id="spanCopyright" ></span> <label id="onTime" style="display:none"></label></div>
+                <label id="onTokenExpiresTime" style="display:none"></label>
+            </div>
+        	<!--底部信息栏结束-->
+        </div>
+        <!--右侧部分结束-->
+    </div>
+</body>
+</html>

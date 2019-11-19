@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用信息管理平台-数据表字段-编辑</title>
+    <meta name="keywords" content="通用信息管理平台">
+    <meta name="description" content="通用信息管理平台">
+	<link href="../../../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="../../../css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="../../../fonts/font-awesome/font-awesome.min.css?v=4.7.0" rel="stylesheet">
+    <link href="../../../css/plugins/animate/animate.min.css" rel="stylesheet">
+    <link href="../../../css/platform.css" rel="stylesheet">
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+    	<form id="divEditForm" role="form" onsubmit="return false;" autocomplete=off>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">字段名称</label>
+                <input type="text" id="columnName" name="columnName" class="form-control m-b edit-layer-input">
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">字段备注</label>
+                <input type="text" id="columnDesc" name="columnDesc" class="form-control m-b edit-layer-input">
+         	</div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">字段类型</label>
+         		<select class="m-b selectpicker edit-layer-input" id="columnType">
+				  	<option value='decimal'>decimal</option>
+         			<option value='varchar'>varchar</option>
+				  	<option value='date'>date</option>
+				  	<option value='datetime'>datetime</option>
+				  	<option value='int'>int</option>
+				  	<option value='text'>text</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">字段长度</label>
+                <input type="text" id="columnLen" name="columnLen" value="0" class="form-control m-b edit-layer-input">
+         	</div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">小数点</label>
+                <input type="text" id="columnFloat" name="columnFloat" value="0" class="form-control m-b edit-layer-input">
+         	</div>
+            <div class="form-group edit-group-style">
+                <label class="col-sm-2 control-label edit-layer-title">默认值</label>
+                <input type="text" id="columnDefault" name="columnDefault" class="form-control m-b edit-layer-input">
+         	</div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">是否主键</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isKey">
+         			<option value='N'>否</option>
+				  	<option value='Y'>是</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">允许空值</label>
+         		<select class="m-b selectpicker edit-layer-input" id="isNull">
+				  	<option value='Y'>是</option>
+         			<option value='N'>否</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style">
+            	<label class="col-sm-2 control-label edit-layer-title">取值类型</label>
+         		<select class="m-b selectpicker edit-layer-input" id="valueType">
+				  	<option value='1'>默认</option>
+         			<option value='2'>字典</option>
+         		</select>
+            </div>
+            <div class="form-group edit-group-style" id="valueTypeDictDiv">
+            	<label class="col-sm-2 control-label edit-layer-title">字典值</label>
+                <input type="text" id="valueTypeDict" name="valueTypeDict" placeholder="请输入取值字典值" class="form-control m-b edit-layer-input" >
+            </div>
+       		<div class="edit-box-button">
+		        <button type="submit" class="btn btn-primary edit-layer-button" id="layerOk">确 定</button>
+		        <button type="reset" class="btn btn-white edit-layer-button" id="layerCancel">取 消</button>
+	        </div>
+        </form>
+    </div>
+    <script src="../../../js/jquery.min.js?v=2.1.4" type="text/javascript"></script>
+    <script src="../../../js/bootstrap.min.js?v=3.3.6" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/validate/localization/messages_zh.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="../../../js/plugins/layui/layer/layer.js" type="text/javascript"></script>
+    <script src="../../../js/platform/jquery-gimp.js" type="text/javascript"></script>
+    <script src="js/gencode-table-edit.js" type="text/javascript"></script>
+</body>
+</html>
