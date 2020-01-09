@@ -25,7 +25,6 @@ function receiveParams(value){
 function initView(){
 	//判断是新增还是修改
 	if(g_params.type == "edit"){
-		$('#when').val(g_params.rows.when);
 		$('#appId').val(g_params.rows.appId);
 		$('#appKey').val(g_params.rows.appKey);
 		$('#appType').val(g_params.rows.appType);
@@ -81,7 +80,6 @@ function submitAction(){
 	if(g_params.type == "edit")
 		submitData["id"] = g_params.rows.id;
 		
-	submitData["when"] = $("#when").val();
 	submitData["appId"] = $("#appId").val();
 	submitData["appKey"] = $("#appKey").val();
 	submitData["appType"] = $("#appType").val();

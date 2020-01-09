@@ -49,6 +49,8 @@ function initTable(){
 		    access_token: top.app.cookies.getCookiesToken(),
             size: params.limit,   						//页面大小
             page: params.offset / params.limit,  		//当前页
+			ip: $("#searchIp").val(),
+			imei: $("#searchImei").val(),
         };
         return param;
     };
@@ -69,6 +71,8 @@ function initTable(){
 		$table.bootstrapTable('refresh');
     });
 	$("#btnReset").click(function () {
+		$("#searchIp").val("");
+		$("#searchImei").val("");
 		$('.selectpicker').selectpicker('refresh');
 		$table.bootstrapTable('refresh');
     });
@@ -150,6 +154,14 @@ function tAppOrderEdit(id, url){
 
 function tAppOrderDel(id, url){
 	appTable.delData($table, url, id + "");
+}
+
+function formatValue(value, row, index){
+	if(value == "0"){
+		return "Android"
+	}else{
+		return "IOS"
+	}
 }
 
 

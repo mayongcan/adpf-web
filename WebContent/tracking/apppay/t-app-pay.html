@@ -19,6 +19,16 @@
 <body class="gray-bg">
     <div class="wrapper wrapper-content animated fadeIn">
 		<div class="ibox-content">
+			<div class="panel panel-default search-panel" id="searchPannel">
+       			<div class="panel-body form-horizontal">
+               		<label class="control-label page-search-label">设备ip</label>
+                   	<input type="text" class="form-control page-search-input" id="searchIp">
+               		<label class="control-label page-search-label">设备imei</label>
+                   	<input type="text" class="form-control page-search-input" id="searchImei">
+               		<button type="button" style="margin-right:10px" id="btnSearch" class="btn btn-primary">查 询</button>                  		
+               		<button type="button" class="btn btn-white" id="btnReset">重 置</button>
+       			</div>
+   			</div>  
        
     		<div class="btn-group hidden-xs" id="tableToolbar" role="group"></div>
             <table id="tableList" 
@@ -41,10 +51,11 @@
                     <tr>
               			<th data-field="tableMulti" data-formatter="appTable.tableFormatCheckbox" data-checkbox="true" data-visible="false"></th>
                         <th data-field="id">日志id</th>
-                        <th data-field="when">发生时间</th>
-                        <th data-field="appId">产品id</th>
+                        <th data-field="when1">发生时间</th>
+                        <!-- <th data-field="appId">产品id</th> -->
+                        <th data-field="name">APP名称</th>
                         <th data-field="appKey">接入key</th>
-                        <th data-field="appType">平台类型</th>
+                        <th data-field="appType" data-formatter="formatValue">平台类型</th>
                         <th data-field="androidId">安卓id</th>
                         <th data-field="idfa">IOS IDFA</th>
                         <th data-field="ip">设备ip</th>
@@ -57,6 +68,8 @@
                         <th data-field="currencyType">货币类型</th>
                         <th data-field="free">金额</th>
                         <th data-field="createTime">创建时间</th>
+                        <!-- <th data-field="attributionPromoId">创建时间</th>
+                        <th data-field="attributionTime">创建时间</th> -->
 						<th data-field="operate" data-formatter="formatOperate" data-width="180px">操作</th>
                     </tr>
                 </thead>

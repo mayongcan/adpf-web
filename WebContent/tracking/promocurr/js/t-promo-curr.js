@@ -283,15 +283,23 @@ function findByTagId(param,id){
 
 function formatActivity(value, row, index){
 	
-	if(row.clickDistinct  == null ||  row.clickDistinct ==undefined  ) return 0;
-	if(row.activeDistinct  == null ||  row.activeDistinct ==undefined  ) return 0;
+	if(row.clickDistinct  == null ||  row.clickDistinct ==undefined || row.clickDistinct == "0"  ) return 0;
+	if(row.activeDistinct  == null ||  row.activeDistinct ==undefined || row.activeDistinct == "0"  ) return 0;
 	return row.activeDistinct/row.clickDistinct*100+"%";
 }
 
 function formatregister(value, row, index){
-	if(row.activeDistinct  == null ||  row.activeDistinct ==undefined  ) return 0;
-	if(row.registerDistinctDay  == null ||  row.registerDistinctDay ==undefined  ) return 0;
+	if(row.activeDistinct  == null ||  row.activeDistinct ==undefined || row.activeDistinct == "0"  ) return 0;
+	if(row.registerDistinctDay  == null ||  row.registerDistinctDay ==undefined || row.registerDistinctDay == "0") return 0;
 	return row.registerDistinctDay/row.activeDistinct*100+"%";
+}
+
+function formatNatur(value, row, index){
+	if(value == undefined || value == null ){
+		return "自然量";
+	}
+	return value;
+		
 }
 
 

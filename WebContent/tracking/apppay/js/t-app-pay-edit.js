@@ -25,7 +25,6 @@ function receiveParams(value){
 function initView(){
 	//判断是新增还是修改
 	if(g_params.type == "edit"){
-		$('#when').val(g_params.rows.when);
 		$('#appId').val(g_params.rows.appId);
 		$('#appKey').val(g_params.rows.appKey);
 		$('#appType').val(g_params.rows.appType);
@@ -41,6 +40,8 @@ function initView(){
 		$('#currencyType').val(g_params.rows.currencyType);
 		$('#free').val(g_params.rows.free);
 		$('#createTime').val(g_params.rows.createTime);
+		$('#attributionPromoId').val(g_params.rows.attributionPromoId);
+		$('#attributionTime').val(g_params.rows.attributionTime);
 		
 	}else{
 	}
@@ -83,7 +84,6 @@ function submitAction(){
 	if(g_params.type == "edit")
 		submitData["id"] = g_params.rows.id;
 		
-	submitData["when"] = $("#when").val();
 	submitData["appId"] = $("#appId").val();
 	submitData["appKey"] = $("#appKey").val();
 	submitData["appType"] = $("#appType").val();
@@ -99,6 +99,8 @@ function submitAction(){
 	submitData["currencyType"] = $("#currencyType").val();
 	submitData["free"] = $("#free").val();
 	submitData["createTime"] = $("#createTime").val();
+	submitData["attributionPromoId"] = $("#attributionPromoId").val();
+	submitData["attributionTime"] = $("#attributionTime").val();
 	//异步处理
 	$.ajax({
 		url: g_params.operUrl + "?access_token=" + top.app.cookies.getCookiesToken(),

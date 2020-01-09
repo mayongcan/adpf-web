@@ -49,6 +49,8 @@ function initTable(){
 		    access_token: top.app.cookies.getCookiesToken(),
             size: params.limit,   						//页面大小
             page: params.offset / params.limit,  		//当前页
+			ip: $("#searchIp").val(),
+			imei: $("#searchImei").val(),
         };
         return param;
     };
@@ -69,6 +71,8 @@ function initTable(){
 		$table.bootstrapTable('refresh');
     });
 	$("#btnReset").click(function () {
+		$("#searchIp").val("");
+		$("#searchImei").val("");
 		$('.selectpicker').selectpicker('refresh');
 		$table.bootstrapTable('refresh');
     });
@@ -84,7 +88,7 @@ function initFuncBtnEvent(){
 		var params = {};
 		params.type = 'add';
 		params.operUrl = top.app.conf.url.apigateway + $("#tAppStartupAdd").data('action-url');
-		top.app.layer.editLayer('新增打开日志', ['710px', '460px'], '/tracking/startupapp/t-app-startup-edit.html', params, function(){
+		top.app.layer.editLayer('新增打开日志', ['710px', '520px'], '/tracking/startupapp/t-app-startup-edit.html', params, function(){
    			//重新加载列表
 			$table.bootstrapTable('refresh');
 		});
@@ -100,7 +104,7 @@ function initFuncBtnEvent(){
 		params.type = 'edit';
 		params.rows = rows[0];
 		params.operUrl = top.app.conf.url.apigateway + $("#tAppStartupEdit").data('action-url');
-		top.app.layer.editLayer('编辑打开日志', ['710px', '460px'], '/tracking/startupapp/t-app-startup-edit.html', params, function(){
+		top.app.layer.editLayer('编辑打开日志', ['710px', '520px'], '/tracking/startupapp/t-app-startup-edit.html', params, function(){
    			//重新加载列表
 			$table.bootstrapTable('refresh');
 		});
@@ -142,7 +146,7 @@ function tAppStartupEdit(id, url){
 	params.type = 'edit';
 	params.rows = row;
 	params.operUrl = top.app.conf.url.apigateway + url;
-	top.app.layer.editLayer('编辑打开日志', ['710px', '460px'], '/tracking/startupapp/t-app-startup-edit.html', params, function(){
+	top.app.layer.editLayer('编辑打开日志', ['710px', '520px'], '/tracking/startupapp/t-app-startup-edit.html', params, function(){
 			//重新加载列表
 		$table.bootstrapTable('refresh');
 	});
@@ -150,6 +154,14 @@ function tAppStartupEdit(id, url){
 
 function tAppStartupDel(id, url){
 	appTable.delData($table, url, id + "");
+}
+
+function formatValue(value, row, index){
+	if(value == "0"){
+		return "Android"
+	}else{
+		return "IOS"
+	}
 }
 
 
