@@ -19,11 +19,12 @@
 <body class="gray-bg">
     <div class="wrapper wrapper-content animated fadeIn">
 		<div class="ibox-content">
-		
+		<!-- btn-info -->
 		<div class="ibox-title" style="border-width:0px;padding-left: 0px;padding-right: 0px;" id="searchDetailTitle">
-	            <!-- <button id="btnDate1" type="button" class="btn btn-table-opreate btn-info" onclick="onSelectDate('1', '今天')">今天</button>
+	             <button id="btnDate1" type="button" class="btn btn-table-opreate " onclick="onSelectDate('1', '今天')">今天</button>
 				<button id="btnDate2" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectDate('2', '最近7天')">最近7天</button>
-				<button id="btnDate3" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectDate('3', '最近30天')">最近30天</button>  -->
+				<button id="btnDate3" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectDate('3', '最近30天')">最近30天</button> 
+				<button id="btnDate4" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectDate('4', '全部')">全部</button> 
 				<!-- <button id="btnDate4" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectDate('4', '其他')">其他</button>		 -->
 				<!-- <div class="input-group date" id="divBeginTime" style="width: 140px;float: left;margin: 0px 15px;">
 	              		<input type="text" class="form-control" id="searchBeginTime"/>
@@ -62,7 +63,8 @@
                    	<button id="btnFlag4" type="button" class="btn btn-table-opreate btn-info"  onclick="onSelectFlag('4', '日期')">日期</button>
 					<button id="btnFlag1" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectFlag('1', '活动')">活动</button>
 					<button id="btnFlag2" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectFlag('2', '渠道')">渠道</button>
-					<button id="btnFlag3" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectFlag('3', '代理商')">代理商</button>	
+					<button id="btnFlag3" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectFlag('3', '代理商')">代理商</button>
+					<button id="btnFlag5" type="button" class="btn btn-table-opreate btn-white" onclick="onSelectFlag('5', '自然量')">自然量</button>	
        			</div>
 			
        			<div class="panel-body form-horizontal">
@@ -103,14 +105,14 @@
 				data-icon-size="outline"
 				data-pagination="true"
 				data-side-pagination="server"	
-				data-page-list="[ALL]"
+				data-page-list="[15, 30, 50, 100, ALL]"
 				data-mobile-responsive="true">
                 <thead>
                     <tr>
                     	
               			<th data-field="tableMulti" data-formatter="appTable.tableFormatCheckbox" data-checkbox="true" data-visible="false"></th>
                        <!--  <th data-field="id">详情id</th> -->
-                        <th data-field="odsTime">日期</th>
+                        <th data-field="odsTime" data-visible="true" >日期</th>
                         <!-- <th data-field="promoId">推广活动id</th>
                         <th data-field="channelId">渠道id</th>
                         <th data-field="agentId">代理商id</th>
@@ -136,10 +138,10 @@
                         <th data-field="payDevice">新增付费设备数</th>
                         <th data-field="totalFee">总付费</th>
                         <th data-field="totalPayDevice">总付费设备数</th>
-                        <th data-field="D1">D1留存</th>
+                       <!--  <th data-field="D1">D1留存</th>
                         <th data-field="D2">D2留存</th>
                         <th data-field="D7">D7留存</th>
-                        <th data-field="D30">D30留存</th>
+                        <th data-field="D30">D30留存</th> -->
 						<th data-field="operate" data-formatter="formatOperate" data-width="180px">操作</th>
                     </tr>
                 </thead>
